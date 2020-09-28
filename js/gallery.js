@@ -1,3 +1,1 @@
-import { preview, original, description } from './gallery-items';
-
-const galleryList = a;
+import gallery from './gallery-items.js';
