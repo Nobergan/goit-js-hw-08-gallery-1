@@ -60,11 +60,10 @@ closeModalBtn.addEventListener('click', onCloseModal);
 
 //Закриття модалки різними методами
 
-function onCloseModal() {
+function onCloseModal(event) {
   lightbox.classList.remove('is-open');
   document.removeEventListener('keydown', onCloseModalByEsc);
   lightboxEl.src = '';
-  closeModalByOverlay();
 }
 
 function onCloseModalByEsc(event) {
