@@ -138,3 +138,10 @@ body {
 .lightbox__button:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* Кнопки навігації */
+.move-left {
+  z-index: 2;
+}
+
+/* .move-right */

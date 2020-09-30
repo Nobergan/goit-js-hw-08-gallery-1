@@ -11,6 +11,7 @@ const galleryMarkup = galleryCreate();
 galleryPic.insertAdjacentHTML('beforeend', galleryMarkup);
 
 function galleryCreate() {
+  let i = 0;
   const markup = gallery
     .map(({ preview, original, description }) => {
       return `<li class="gallery__item">
@@ -22,6 +23,7 @@ function galleryCreate() {
       class="gallery__image"
       src="${preview}"
       data-source="${original}"
+      data-index ="${(i += 1)}"
       alt="${description}"
     />
   </a>
@@ -78,4 +80,21 @@ function closeModalByOverlay(event) {
   if (event.currentTarget === event.target) {
     onCloseModal();
   }
+}
+
+//Будем створювати слайди
+
+const leftBtn = document.querySelector('.move-left');
+const rightBtn = document.querySelector('.move-right');
+const imgGallery = document.querySelectorAll('.gallery__image');
+
+leftBtn.addEventListener('click', moveLeft);
+
+function moveLeft() {
+  gallery.map((element, index) => {
+    index -= 1;
+    element === index;
+
+    lightboxEl.src = element.original;
+  });
 }
