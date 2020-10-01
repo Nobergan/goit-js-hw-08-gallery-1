@@ -144,4 +144,6 @@ body {
   z-index: 2;
 }
 
-/* .move-right */
+.move-right {
+  z-index: 2;
+}
