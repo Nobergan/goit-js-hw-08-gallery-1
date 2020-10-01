@@ -102,7 +102,6 @@ leftBtn.addEventListener('click', () => {
     lightboxEl.dataset.index = currentOpenImageIndex - 1;
   }
 
-  console.log(currentOpenImageIndex);
   //Перевірка на перший слайд
   if (currentOpenImageIndex === 1) {
     leftBtn.setAttribute('disabled', 'disabled');
