@@ -94,19 +94,14 @@ const imgGallery = document.querySelectorAll('.gallery__image');
 
 leftBtn.addEventListener('click', () => {
   const currentOpenImageIndex = lightboxEl.dataset.index;
-  // Images indexes starts from 1, i.e. 1...9
-  // While indexes in array starts from 0, i.e 0...8
-  // So if we took image №2 in array it's under index №1
-  // So to get previou one we need to subtract 2 i.e. 2 - 2
   const nextImage = gallery[currentOpenImageIndex - 2];
 
-  console.log(currentOpenImageIndex);
+  console.log(nextImage);
 
   if (nextImage !== undefined) {
     lightboxEl.src = nextImage.original;
   }
-
-  // Check if it's first one
+  //Перевірка на перший слайд
   if (currentOpenImageIndex === 1) {
     leftBtn.setAttribute('disabled');
   } else {
@@ -116,13 +111,13 @@ leftBtn.addEventListener('click', () => {
 
 rightBtn.addEventListener('click', () => {
   const currentOpenImageIndex = lightboxEl.dataset.index;
-  const nextImage = gallery[currentOpenImageIndex];
+  const nextImage = currentOpenImageIndex;
 
   if (nextImage !== undefined) {
     lightboxEl.src = nextImage.original;
   }
 
-  // Check if it's last one
+  // Перевірка на останній слайд
   if (currentOpenImageIndex === gallery.length) {
     rightBtn.setAttribute('disabled');
   } else {
