@@ -140,10 +140,32 @@ body {
 }
 
 /* Кнопки навігації */
-.move-left {
-  z-index: 2;
-}
 
 .move-right {
+  position: absolute;
   z-index: 2;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 50%;
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.move-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  height: 100%;
+  width: 50%;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.move-right:hover,
+.move-right:focus,
+.move-left:hover,
+.move-left:focus {
+  opacity: 0.2;
 }

@@ -90,19 +90,22 @@ function closeModalByOverlay(event) {
 
 const leftBtn = document.querySelector('.move-left');
 const rightBtn = document.querySelector('.move-right');
-const imgGallery = document.querySelectorAll('.gallery__image');
 
 leftBtn.addEventListener('click', () => {
   const currentOpenImageIndex = lightboxEl.dataset.index;
   const nextImage = gallery[currentOpenImageIndex - 2];
 
+  rightBtn.removeAttribute('disabled');
+
   if (nextImage !== undefined) {
     lightboxEl.src = nextImage.original;
     lightboxEl.dataset.index = currentOpenImageIndex - 1;
   }
+
+  console.log(currentOpenImageIndex);
   //Перевірка на перший слайд
   if (currentOpenImageIndex === 1) {
-    leftBtn.setAttribute('disabled');
+    leftBtn.setAttribute('disabled', 'disabled');
   } else {
     leftBtn.removeAttribute('disabled');
   }
@@ -112,6 +115,8 @@ rightBtn.addEventListener('click', () => {
   const currentOpenImageIndex = Number(lightboxEl.dataset.index);
   const nextImage = gallery[currentOpenImageIndex];
 
+  leftBtn.removeAttribute('disabled');
+
   if (nextImage !== undefined) {
     lightboxEl.src = nextImage.original;
     lightboxEl.dataset.index = currentOpenImageIndex + 1;
@@ -119,7 +124,7 @@ rightBtn.addEventListener('click', () => {
 
   // Перевірка на останній слайд
   if (currentOpenImageIndex === gallery.length) {
-    rightBtn.setAttribute('disabled');
+    rightBtn.setAttribute('disabled', 'disabled');
   } else {
     rightBtn.removeAttribute('disabled');
   }
