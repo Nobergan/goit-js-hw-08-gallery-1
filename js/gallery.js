@@ -96,10 +96,9 @@ leftBtn.addEventListener('click', () => {
   const currentOpenImageIndex = lightboxEl.dataset.index;
   const nextImage = gallery[currentOpenImageIndex - 2];
 
-  console.log(nextImage);
-
   if (nextImage !== undefined) {
     lightboxEl.src = nextImage.original;
+    lightboxEl.dataset.index = currentOpenImageIndex - 1;
   }
   //Перевірка на перший слайд
   if (currentOpenImageIndex === 1) {
@@ -110,11 +109,12 @@ leftBtn.addEventListener('click', () => {
 });
 
 rightBtn.addEventListener('click', () => {
-  const currentOpenImageIndex = lightboxEl.dataset.index;
-  const nextImage = currentOpenImageIndex;
+  const currentOpenImageIndex = Number(lightboxEl.dataset.index);
+  const nextImage = gallery[currentOpenImageIndex];
 
   if (nextImage !== undefined) {
     lightboxEl.src = nextImage.original;
+    lightboxEl.dataset.index = currentOpenImageIndex + 1;
   }
 
   // Перевірка на останній слайд
