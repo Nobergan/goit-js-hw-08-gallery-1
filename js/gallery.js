@@ -92,7 +92,7 @@ const leftBtn = document.querySelector('.move-left');
 const rightBtn = document.querySelector('.move-right');
 
 leftBtn.addEventListener('click', () => {
-  const currentOpenImageIndex = lightboxEl.dataset.index;
+  const currentOpenImageIndex = Number(lightboxEl.dataset.index);
   const nextImage = gallery[currentOpenImageIndex - 2];
 
   rightBtn.removeAttribute('disabled');
@@ -111,7 +111,7 @@ leftBtn.addEventListener('click', () => {
 });
 
 rightBtn.addEventListener('click', () => {
-  const currentOpenImageIndex = Number(lightboxEl.dataset.index);
+  const currentOpenImageIndex = Number(1);
   const nextImage = gallery[currentOpenImageIndex];
 
   leftBtn.removeAttribute('disabled');
