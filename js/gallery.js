@@ -111,7 +111,7 @@ leftBtn.addEventListener('click', () => {
 });
 
 rightBtn.addEventListener('click', () => {
-  const currentOpenImageIndex = Number(1);
+  const currentOpenImageIndex = 1;
   const nextImage = gallery[currentOpenImageIndex];
 
   leftBtn.removeAttribute('disabled');
